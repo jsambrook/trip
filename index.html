@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Hawaiian Adventure Awaits!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(120deg, #e0f2f1 0%, #b2dfdb 100%);
+            min-height: 100vh;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .feature-list li::before {
+            content: "🌺";
+            display: inline-block;
+            width: 1.5em;
+            margin-right: 0.5em;
+            font-size: 0.8em;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-5xl">
+        <!-- Header -->
+        <div class="text-center mb-12 bg-white/80 rounded-lg shadow-lg p-6">
+            <img src="/api/placeholder/800/400" alt="Hawaii Sunset" class="w-full h-64 object-cover rounded-lg shadow-lg mb-6"/>
+            <h1 class="text-4xl font-bold text-teal-800 mb-4">Your Hawaiian Adventure Awaits!</h1>
+            <p class="text-xl text-teal-700">Dear Marjaneh,</p>
+            <p class="text-lg text-teal-600 mt-4">Surprise! We're going to the Big Island of Hawaii! Let's plan our perfect getaway together.</p>
+        </div>
+
+        <!-- Travel Details -->
+        <div class="bg-white/90 rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-teal-700 mb-4">Travel Details</h2>
+            <div class="space-y-4">
+                <div class="flex items-center">
+                    <span class="font-medium w-32">Airline:</span>
+                    <a href="https://www.alaskaair.com/hawaii" target="_blank" class="text-teal-600 hover:text-teal-800 hover:underline">Alaska Airlines</a>
+                </div>
+                <div class="flex items-center">
+                    <span class="font-medium w-32">Trip Length:</span>
+                    <select name="tripLength" class="rounded-md border-gray-300 shadow-sm">
+                        <option value="5">5 nights</option>
+                        <option value="6">6 nights</option>
+                        <option value="7">7 nights</option>
+                    </select>
+                </div>
+                <div class="flex items-center">
+                    <span class="font-medium w-32">When:</span>
+                    <span>February 2025</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="bg-white/90 rounded-lg shadow-lg p-4 mb-8 sticky top-4 z-50">
+            <nav class="flex flex-wrap gap-4 justify-center">
+                <a href="#adventures" class="text-teal-600 hover:text-teal-800 hover:underline">Adventures</a>
+                <a href="#dining" class="text-teal-600 hover:text-teal-800 hover:underline">Dining</a>
+                <a href="#beaches" class="text-teal-600 hover:text-teal-800 hover:underline">Beaches</a>
+                <a href="#culture" class="text-teal-600 hover:text-teal-800 hover:underline">Cultural Activities</a>
+                <a href="#shopping" class="text-teal-600 hover:text-teal-800 hover:underline">Shopping</a>
+            </nav>
+        </div>
+
+        <!-- Adventures Section -->
+        <div class="bg-white/90 rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-teal-700 mb-6 flex items-center">
+                Choose Your Adventures 
+                <span class="ml-2 text-2xl">🌋</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Volcano National Park -->
+                <div class="card-hover rounded-lg border border-teal-100 overflow-hidden bg-white shadow-md">
+                    <img src="/api/placeholder/400/200" alt="Volcano National Park" class="w-full h-48 object-cover"/>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg mb-2 text-teal-800">Hawaii Volcanoes National Park</h4>
+                        <ul class="feature-list text-gray-600 mb-4">
+                            <li>See active volcanoes</li>
+                            <li>Crater Rim Drive</li>
+                            <li>Thurston Lava Tube</li>
+                            <li>Guided tours available</li>
+                        </ul>
+                        <p class="font-medium text-teal-700 mb-4">From $179/person</p>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Interest Level:</label>
+                            <select name="volcano_interest" class="w-full rounded-md border-gray-300 shadow-sm">
+                                <option value="">Select interest</option>
+                                <option value="high">Must Do!</option>
+                                <option value="medium">Interested</option>
+                                <option value="low">Not Interested</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manta Ray Night Snorkel -->
+                <div class="card-hover rounded-lg border border-teal-100 overflow-hidden bg-white shadow-md">
+                    <img src="/api/placeholder/400/200" alt="Manta Ray Night Snorkel" class="w-full h-48 object-cover"/>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg mb-2 text-teal-800">Manta Ray Night Snorkel</h4>
+                        <ul class="feature-list text-gray-600 mb-4">
+                            <li>Swim with gentle giants</li>
+                            <li>All equipment provided</li>
+                            <li>Professional guides</li>
+                            <li>Unforgettable experience</li>
+                        </ul>
+                        <p class="font-medium text-teal-700 mb-4">$129/person</p>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Interest Level:</label>
+                            <select name="manta_interest" class="w-full rounded-md border-gray-300 shadow-sm">
+                                <option value="">Select interest</option>
+                                <option value="high">Must Do!</option>
+                                <option value="medium">Interested</option>
+                                <option value="low">Not Interested</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mauna Kea Summit -->
+                <div class="card-hover rounded-lg border border-teal-100 overflow-hidden bg-white shadow-md">
+                    <img src="/api/placeholder/400/200" alt="Mauna Kea Summit" class="w-full h-48 object-cover"/>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg mb-2 text-teal-800">Mauna Kea Summit & Stars</h4>
+                        <ul class="feature-list text-gray-600 mb-4">
+                            <li>World's best stargazing</li>
+                            <li>Sunset above the clouds</li>
+                            <li>Hot chocolate included</li>
+                            <li>Professional telescope viewing</li>
+                        </ul>
+                        <p class="font-medium text-teal-700 mb-4">$219/person</p>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Interest Level:</label>
+                            <select name="mauna_kea_interest" class="w-full rounded-md border-gray-300 shadow-sm">
+                                <option value="">Select interest</option>
+                                <option value="high">Must Do!</option>
+                                <option value="medium">Interested</option>
+                                <option value="low">Not Interested</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Helicopter Tour -->
+                <div class="card-hover rounded-lg border border-teal-100 overflow-hidden bg-white shadow-md">
+                    <img src="/api/placeholder/400/200" alt="Helicopter Tour" class="w-full h-48 object-cover"/>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg mb-2 text-teal-800">Circle Island Helicopter Tour</h4>
+                        <ul class="feature-list text-gray-600 mb-4">
+                            <li>See active lava flows</li>
+                            <li>Waterfall valleys</li>
+                            <li>Stunning coastline views</li>
+                            <li>Professional narration</li>
+                        </ul>
+                        <p class="font-medium text-teal-700 mb-4">$349/person</p>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Interest Level:</label>
+                            <select name="helicopter_interest" class="w-full rounded-md border-gray-300 shadow-sm">
+                                <option value="">Select interest</option>
+                                <option value="high">Must Do!</option>
+                                <option value="medium">Interested</option>
+                                <option value="low">Not Interested</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Your Activity Notes & Preferences:</label>
+                <textarea name="activity_notes" class="w-full h-24 rounded-md border-gray-300 shadow-sm"></textarea>
+            </div>
+        </div>
+
+        <!-- Dining Section -->
+        <div id="dining" class="bg-white/90 rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-teal-700 mb-6 flex items-center">
+                Local Flavors & Dining 
+                <span class="ml-2 text-2xl">🍜</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Brown's Beach House -->
+                <div class="card-hover rounded-lg border border-teal-100 overflow-hidden bg-white shadow-md">
+                    <img src="/api/placeholder/400/200" alt="Brown's Beach House" class="w-full h-48 object-cover"/>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg mb-2 text-teal-800">Brown's Beach House</h4>
+                        <ul class="feature-list text-gray-600 mb-4">
+                            <li>Fine dining on the beach</li>
+                            <li>Fresh-caught seafood</li>
+                            <li>Sunset views</li>
+                            <li>Resort attire required</li>
+                        </ul>
+                        <p class="font-medium text-teal-700 mb-4">$$ | Dinner only</p>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Interest Level:</label>
+                            <select name="browns_interest" class="w-full rounded-md border-gray-300 shadow-sm">
+                                <option value="">Select interest</option>
+                                <option value="high">Must Try!</option>
+                                <option value="medium">Interested</option>
+                                <option value="low">Not Interested</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Local Poke Spot -->
+                <div class="card-hover rounded-lg border border-teal-100 overflow-hidden bg-white shadow-md">
+                    <img src="/api/placeholder/400/200" alt="Umeke's Poke" class="w-full h-48 object-cover"/>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg mb-2 text-teal-800">Umeke's Fish Market</h4>
+                        <ul class="feature-list text-gray-600 mb-4">
+                            <li>Best poke on the island</li>
+                            <li>Local favorite spot</li>
+                            <li>Fresh daily fish</li>
+                            <li>Casual atmosphere</li>
+                        </ul>
+                        <p class="font-medium text-teal-700 mb-4">$ | Lunch favorite</p>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Interest Level:</label>
+                            <select name="umekes_interest" class="w-full rounded-md border-gray-300 shadow-sm">
+                                <option value="">Select interest</option>
+                                <option value="high">Must Try!</option>
+                                <option value="medium">Interested</option>
+                                <option value="low">Not Interested</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beaches Section -->
+        <div id="beaches" class="bg-white/90 rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-teal-700 mb-6 flex items-center">
+                Beautiful Beaches 
+                <span class="ml-2 text-2xl">🏖️</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Black Sand Beach -->
+                <div class="card-hover rounded-lg border border-teal-100 overflow-hidden bg-white shadow-md">
+                    <img src="/api/placeholder/400/200" alt="Punalu'u Black Sand Beach" class="w-full h-48 object-cover"/>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg mb-2 text-teal-800">Punalu'u Black Sand Beach</h4>
+                        <ul class="feature-list text-gray-600 mb-4">
+                            <li>Unique black sand beach</li>
+                            <li>Sea turtle sightings common</li>
+                            <li>Great for photos</li>
+                            <li>Palm tree lined coast</li>
+                        </ul>
+                        <p class="font-medium text-teal-700 mb-4">Free | Public beach</p>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Interest Level:</label>
+                            <select name="blacksand_interest" class="w-full rounded-md border-gray-300 shadow-sm">
+                                <option value="">Select interest</option>
+                                <option value="high">Must Visit!</option>
+                                <option value="medium">Interested</option>
+                                <option value="low">Not Interested</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hapuna Beach -->
+                <div class="card-hover rounded-lg border border-teal-100 overflow-hidden bg-white shadow-md">
+                    <img src="/api/placeholder/400/200" alt="Hapuna Beach" class="w-full h-48 object-cover"/>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg mb-2 text-teal-800">Hapuna Beach</h4>
+                        <ul class="feature-list text-gray-600 mb-4">
+                            <li>White sand paradise</li>
+                            <li>Perfect for swimming</li>
+                            <li>Beach rentals available</li>
+                            <li>Lifeguard on duty</li>
+                        </ul>
+                        <p class="font-medium text-teal-700 mb-4">$5 parking | Public beach</p>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Interest Level:</label>
+                            <select name="hapuna_interest" class="w-full rounded-md border-gray-300 shadow-sm">
+                                <option value="">Select interest</option>
+                                <option value="high">Must Visit!</option>
+                                <option value="medium">Interested</option>
+                                <option value="low">Not Interested</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cultural Activities -->
+        <div id="culture" class="bg-white/90 rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-teal-700 mb-6 flex items-center">
+                Cultural Experiences 
+                <span class="ml-2 text-2xl">🌺</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Luau -->
+                <div class="card-hover rounded-lg border border-teal-100 overflow-hidden bg-white shadow-md">
+                    <img src="/api/placeholder/400/200" alt="Royal Kona Luau" class="w-full h-48 object-cover"/>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg mb-2 text-teal-800">Royal Kona Resort Luau</h4>
+                        <ul class="feature-list text-gray-600 mb-4">
+                            <li>Traditional Hawaiian feast</li>
+                            <li>Hula & fire dancers</li>
+                            <li>Oceanfront setting</li>
+                            <li>Shell lei greeting</li>
+                        </ul>
+                        <p class="font-medium text-teal-700 mb-4">$129/person includes dinner</p>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Interest Level:</label>
+                            <select name="luau_interest" class="w-full rounded-md border-gray-300 shadow-sm">
+                                <option value="">Select interest</option>
+                                <option value="high">Must Do!</option>
+                                <option value="medium">Interested</option>
+                                <option value="low">Not Interested</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lei Making -->
+                <div class="card-hover rounded-lg border border-teal-100 overflow-hidden bg-white shadow-md">
+                    <img src="/api/placeholder/400/200" alt="Lei Making Class" class="w-full h-48 object-cover"/>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg mb-2 text-teal-800">Traditional Lei Making</h4>
+                        <ul class="feature-list text-gray-600 mb-4">
+                            <li>Learn from local experts</li>
+                            <li>All materials included</li>
+                            <li>Take home your creation</li>
+                            <li>Cultural history shared</li>
+                        </ul>
+                        <p class="font-medium text-teal-700 mb-4">$59/person | 2 hours</p>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Interest Level:</label>
+                            <select name="lei_interest" class="w-full rounded-md border-gray-300 shadow-sm">
+                                <option value="">Select interest</option>
+                                <option value="high">Must Do!</option>
+                                <option value="medium">Interested</option>
+                                <option value="low">Not Interested</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shopping Section -->
+        <div id="shopping" class="bg-white/90 rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-teal-700 mb-6 flex items-center">
+                Shopping & Markets 
+                <span class="ml-2 text-2xl">🛍️</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Farmers Market -->
+                <div class="card-hover rounded-lg border border-teal-100 overflow-hidden bg-white shadow-md">
+                    <img src="/api/placeholder/400/200" alt="Hilo Farmers Market" class="w-full h-48 object-cover"/>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg mb-2 text-teal-800">Hilo Farmers Market</h4>
+                        <ul class="feature-list text-gray-600 mb-4">
+                            <li>Fresh tropical fruits</li>
+                            <li>Local crafts & art</li>
+                            <li>Wednesday & Saturday</li>
+                            <li>Cash preferred</li>
+                        </ul>
+                        <p class="font-medium text-teal-700 mb-4">Free entry | Morning market</p>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Interest Level:</label>
+                            <select name="market_interest" class="w-full rounded-md border-gray-300 shadow-sm">
+                                <option value="">Select interest</option>
+                                <option value="high">Must Visit!</option>
+                                <option value="medium">Interested</option>
+                                <option value="low">Not Interested</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shopping Center -->
+                <div class="card-hover rounded-lg border border-teal-100 overflow-hidden bg-white shadow-md">
+                    <img src="/api/placeholder/400/200" alt="Kings Shops" class="w-full h-48 object-cover"/>
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg mb-2 text-teal-800">Kings' Shops</h4>
+                        <ul class="feature-list text-gray-600 mb-4">
+                            <li>Luxury boutiques</li>
+                            <li>Local art galleries</li>
+                            <li>Hawaiian jewelry</li>
+                            <li>Free hula shows</li>
+                        </ul>
+                        <p class="font-medium text-teal-700 mb-4">Free entry | Open daily</p>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">Interest Level:</label>
+                            <select name="shops_interest" class="w-full rounded-md border-gray-300 shadow-sm">
+                                <option value="">Select interest</option>
+                                <option value="high">Must Visit!</option>
+                                <option value="medium">Interested</option>
+                                <option value="low">Not Interested</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Print/Save Button -->
+        <div class="fixed bottom-4 right-4 no-print">
+            <button type="button" onclick="window.print()" 
+                    class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg shadow-lg transition-colors">
+                Save/Print Preferences
+            </button>
+        </div>
+    </div>
+</body>
+</html>
